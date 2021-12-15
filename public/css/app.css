@@ -1,0 +1,33 @@
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialised;
+  color: #232323;
+}
+.photo{
+  height: 60px;
+  width: 60px;
+}
+section.first-page{
+  background: #F8F8F8;;
+}
+
+a:hover{
+      color: orangered;
+      transition: all .3s ease-in-out;
+}
+li{
+  font-weight: bolder;
+}
+.size{
+   background: palevioletred;
+}
+.add-to-cart{
+  border: 2px solid orangered;
+  color: orangered;
+  transition: all .3s ease-in-out;
+}
+.add:hover{
+  background-color: orangered;
+  border-color: #fff;
+  color: #fff;
+}
