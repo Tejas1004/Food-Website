@@ -10,7 +10,6 @@ body {
 section.first-page{
   background: #F8F8F8;;
 }
-
 a:hover{
       color: orangered;
       transition: all .3s ease-in-out;
@@ -30,4 +29,49 @@ li{
   background-color: orangered;
   border-color: #fff;
   color: #fff;
+}
+button{
+  background: orange;
+  height: 50px;
+  font-weight: bolder;
+  transition:all .3s ease-in-out;
+}
+.order:hover{
+  background: lightcoral;
+}
+button Menu{
+  background: orange;
+  height: 50px;
+  font-weight: bolder;
+  transition:all .3s ease-in-out;
+}
+
+section.cart
+{
+  background: #f8f8f8;
+}
+img.full{
+   width: 50px;
+}
+.amount{
+  color: orangered;
+}
+button.lastbut{
+  background: orangered;
+  height: 50px;
+  font-weight: bolder;
+  transition:all .3s ease-in-out;
+  border-radius: 10px;
+  width: 100px;
+}
+.lastbut:hover{
+  background: lightslategrey;
+}
+section.login{
+  background: #f8f8f8;
+  min-height: calc(100vh-86px);
+}
+.login
+a:hover{
+  color: orangered;
 }
