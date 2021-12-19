@@ -3,75 +3,88 @@ body {
   -webkit-font-smoothing: antialised;
   color: #232323;
 }
-.photo{
-  height: 60px;
-  width: 60px;
+
+.photo {
+  height: 40px;
+  width: 40px;
 }
-section.first-page{
-  background: #F8F8F8;;
+
+section.first-page {
+  background: #F8F8F8;
 }
-a:hover{
-      color: orangered;
-      transition: all .3s ease-in-out;
+
+a:hover {
+  color: orangered;
+  transition: all 0.3s ease-in-out;
 }
-li{
+
+li {
   font-weight: bolder;
 }
-.size{
-   background: palevioletred;
+
+.size {
+  background: palevioletred;
 }
-.add-to-cart{
+
+.add-to-cart {
   border: 2px solid orangered;
   color: orangered;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.add:hover{
-  background-color: orangered;
+
+.add-to-cart:hover {
+  background-color: #e76565;
   border-color: #fff;
   color: #fff;
 }
-button{
+
+button {
   background: orange;
   height: 50px;
   font-weight: bolder;
-  transition:all .3s ease-in-out;
-}
-.order:hover{
-  background: lightcoral;
-}
-button Menu{
-  background: orange;
-  height: 50px;
-  font-weight: bolder;
-  transition:all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-section.cart
-{
+.order:hover {
+  background: lightcoral;
+}
+
+button Menu {
+  background: orange;
+  height: 50px;
+  font-weight: bolder;
+  transition: all 0.3s ease-in-out;
+}
+
+section.cart {
   background: #f8f8f8;
 }
-img.full{
-   width: 50px;
+
+img.full {
+  width: 50px;
 }
-.amount{
+
+.amount {
   color: orangered;
 }
-button.lastbut{
+
+button.lastbut {
   background: orangered;
   height: 50px;
   font-weight: bolder;
-  transition:all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   border-radius: 10px;
   width: 100px;
 }
-.lastbut:hover{
+
+.lastbut:hover {
   background: lightslategrey;
 }
-section.login{
+
+section.login {
   background: #f8f8f8;
-  min-height: calc(100vh-86px);
 }
-.login
-a:hover{
+
+.login a:hover {
   color: orangered;
 }

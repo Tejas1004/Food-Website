@@ -5,3 +5,76 @@ body{
     -webkit-font-smoothing : antialised;
     color: $dark;
 }
+.photo{
+    height: 40px;
+    width: 40px;
+}
+
+section.first-page{
+  background: #F8F8F8;;
+}
+a:hover{
+      color: orangered;
+      transition: all .3s ease-in-out;
+}
+li{
+  font-weight: bolder;
+}
+.size{
+   background: palevioletred;
+}
+.add-to-cart{
+  border: 2px solid orangered;
+  color: orangered;
+  transition: all .3s ease-in-out;
+}
+.add-to-cart:hover{
+  background-color: rgb(231, 101, 101);
+  border-color: #fff;
+  color: #fff;
+}
+button{
+  background: orange;
+  height: 50px;
+  font-weight: bolder;
+  transition:all .3s ease-in-out;
+}
+.order:hover{
+  background: lightcoral;
+}
+button Menu{
+  background: orange;
+  height: 50px;
+  font-weight: bolder;
+  transition:all .3s ease-in-out;
+}
+
+section.cart
+{
+  background: #f8f8f8;
+}
+img.full{
+   width: 50px;
+}
+.amount{
+  color: orangered;
+}
+button.lastbut{
+  background: orangered;
+  height: 50px;
+  font-weight: bolder;
+  transition:all .3s ease-in-out;
+  border-radius: 10px;
+  width: 100px;
+}
+.lastbut:hover{
+  background: lightslategrey;
+}
+section.login{
+  background: #f8f8f8;
+  
+}
+.login
+a:hover{
+  color: orangered;
+}
