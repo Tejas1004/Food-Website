@@ -23,7 +23,9 @@
                 <li class="ml-6"><a href="#">Offers</a></li>
                 <li class="ml-6"><a href="/register">Register</a></li>
                 <li class="ml-6"><a href="/login">Login</a></li>
-                <li class="ml-6"><a href="/cart" class="inline-block px-4 rounded-full"><i class="fa fa-shopping-cart" style="font-size:48px;color:orangered"></i></a></li>
+                <li class="ml-6"><a href="/cart" class="inline-block px-4 rounded-full">
+                    <span class="cartCounter text-orangered font-bold flex items-center pr-2"></span><%=session.cart ? session.cart.totalQty:''%>
+                    <i class="fa fa-shopping-cart" style="font-size:48px;color:#ff4500"></i></a></li></span>
             </ul>
         </div>
     </div>   

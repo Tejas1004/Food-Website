@@ -1,80 +1,102 @@
-@import './variables';
+@import "./variables";
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
 
-body{
-    font-family: 'Lato',sans-serif;
-    -webkit-font-smoothing : antialised;
-    color: $dark;
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialised;
+  color: $dark;
 }
-.photo{
-    height: 40px;
-    width: 40px;
+.photo {
+  height: 40px;
+  width: 40px;
 }
-
-section.first-page{
-  background: #F8F8F8;;
+section.first-page {
+  background: #f8f8f8;
 }
-a:hover{
-      color: orangered;
-      transition: all .3s ease-in-out;
+a:hover {
+  color: orangered;
+  transition: all 0.3s ease-in-out;
 }
-li{
+li {
   font-weight: bolder;
 }
-.size{
-   background: palevioletred;
+.size {
+  background: palevioletred;
 }
-.add-to-cart{
+.add-to-cart {
   border: 2px solid orangered;
   color: orangered;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.add-to-cart:hover{
+.add-to-cart:hover {
   background-color: rgb(231, 101, 101);
   border-color: #fff;
   color: #fff;
 }
-button{
+button {
   background: orange;
   height: 50px;
   font-weight: bolder;
-  transition:all .3s ease-in-out;
-}
-.order:hover{
-  background: lightcoral;
-}
-button Menu{
-  background: orange;
-  height: 50px;
-  font-weight: bolder;
-  transition:all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-section.cart
-{
+button Menu {
+  background: orange;
+  height: 50px;
+  font-weight: bolder;
+  transition: all 0.3s ease-in-out;
+}
+
+section.cart {
   background: #f8f8f8;
 }
-img.full{
-   width: 50px;
+img.full {
+  width: 50px;
 }
-.amount{
+.amount {
   color: orangered;
 }
-button.lastbut{
+button.lastbut {
   background: orangered;
   height: 50px;
   font-weight: bolder;
-  transition:all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   border-radius: 10px;
   width: 100px;
 }
-.lastbut:hover{
+.lastbut:hover {
   background: lightslategrey;
 }
-section.login{
+section.login {
   background: #f8f8f8;
-  
 }
-.login
-a:hover{
+.login a:hover {
   color: orangered;
+}
+.noty_themes__mint {
+  border-radius: 50px;
+  padding-left: 8px;
+}
+.pizza-list {
+  display: flex;
+  align-items: center;
+}
+.menu-img {
+  display: flex;
+  align-self: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.menu-detail {
+  display: flex;
+  font-weight: bolder;
+  margin-left: 10px;
+  flex: 1;
+}
+.menu-charge {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bolder;
+  flex: 1;
 }
