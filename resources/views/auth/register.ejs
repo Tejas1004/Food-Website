@@ -21,8 +21,16 @@
             <ul class="flex items-center">
                 <li class="ml-6"> <a href="/">Home</a> </li>
                 <li class="ml-6"><a href="#">Offers</a></li>
-                <li class="ml-6"><a href="/register">Register</a></li>
-                <li class="ml-6"><a href="/login">Login</a></li>
+                 <li> 
+                   <% if(user) { %>
+                  <form id="logout" action="/logout" method="POST">
+                      <a onclick="document.getElementById('logout') .submit()" href="#">Logout</a>
+                  </form>
+                </li>
+              <% } else { %>
+              <li class="ml-6"><a href="/register">Register</a></li>
+              <li class="ml-6"><a href="/login">Login</a></li>
+              <% } %>
                 <li class="ml-6"><a href="/cart" class="inline-block px-4 rounded-full">
                   <span class="cartCounter text-orangered font-bold flex items-center pr-2"><%=session.cart ? session.cart.totalQty:''%>
                     <i class="fa fa-shopping-cart" style="font-size:48px;color:orangered"></i></a></li></span>
@@ -35,28 +43,33 @@
 
 <section class="login flex justify-center pt-24">
     <div class="w-full max-w-xs">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form action="/register" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <% if(messages.error) {%>
+          <span class="text-red-500 text-xs italic"><%= messages.error %></span>
+          <% } %>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="Name">
                   Enter Your Name
-                </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Name" type="text" placeholder="Enter Your Name">
+                </label >
+                <input name="name" value="<%=  messages.name %>" 
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Name" type="text" placeholder="Enter Your Name">
               </div>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="Email">
               Email
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="Email" placeholder="Enter Your Email">
+            <input name="email" value="<%= messages.email  %>" 
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="Email" placeholder="Enter Your Email">
           </div>
           <div class="mb-6">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
               Password
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter Your Password">
-            <p class="text-red-500 text-xs italic">Please Enter Your Password</p>
+            <input name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter Your Password">
+            
           </div>
           <div class="flex items-center justify-between">
-            <button class="btn-primay rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            <button class="btn-primay rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
              Create Account
             </button>
             <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/login">
