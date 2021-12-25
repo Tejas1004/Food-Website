@@ -14,80 +14,87 @@
 <body>
     <nav>
         <div>
-        <i1mg class="container mx-auto flex items-center justify-between py-4">
+            <i1mg class="container mx-auto flex items-center justify-between py-4">
             <div>
-                <img class="photo" src="/img/Logo.png" alt="LOGO" > 
+                <a href="/"> <img class="photo" src="/img/Logo.png" alt="LOGO" > </a>
             </div>
             <div>
                 <ul class="flex items-center">
-                    <li class="ml-6"> <a href="/">Home</a> </li>
-                    <li class="ml-6"><a href="#">Offers</a></li>
-                    <li class="ml-6"><a href="/register">Register</a></li>
-                    <li class="ml-6"><a href="/login">Login</a></li>
-                    <li class="ml-6"><a href="/cart" class="inline-block px-4 rounded-full">
+                     <li class="ml-6"> <a href="/">Menu</a> </li>
+                     <li class="ml-6"><a href="#">Offers</a></li>
+                     <% if(user) { %>
+                     <li> 
+                       <form id="logout" action="/logout" method="POST">
+                           <a onclick="document.getElementById('logout') .submit()" href="#">Logout</a>
+                       </form>
+                     </li>
+                     <% } else { %>
+                     <li class="ml-6"><a href="/register">Register</a></li>
+                     <li class="ml-6"><a href="/login">Login</a></li>
+                     <% } %>
+                     <li class="ml-6"><a href="/cart" class="inline-block px-4 rounded-full">
                         <span class="cartCounter text-orangered font-bold flex items-center pr-2"><%=session.cart ? session.cart.totalQty:''%>
                             <i class="fa fa-shopping-cart" style="font-size:48px;color:orangered"></i></a></li></span>
                 </ul>
             </div>
         </div>   
     </nav>
- 
+
     <section class="cart py-16">
-   <% if(session.cart){%>
-         <div class="order container mx-auto xl:w-1/2">
-             <div class="flex items-center border-b border-gray-300 pb-4">
-                 <img class="full" src="img/cart2.jpg" alt="fully">
-                 <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
-             </div>
-             <div class="pizza-list">
-                <% for(let pizza of Object.values(session.cart.items)) { %>
-                <div class="flex items-center my-8">
-                    <img class="w-24" src="/img/<%= pizza.item.image %>" alt="">
-                    <div class="flex-1 ml-4">
-                        <h1><%= pizza.item.name %></h1>
-                        <span><%= pizza.item.size %></span>
-                    </div>
-                    <span class="flex-1"><%= pizza.qty %> Pcs</span>
-                    <span class="font-bold text-lg">₹ <%= pizza.item.price * pizza.qty %></span>
-                </div>
-                <%  } %>
-             </div>            
-             <hr>
-            
-            <div class="text-right py-4">
-                <div>
-                    <span class="text-lg font-bold">Total Amount</span>
-                    <span class="amount text-2xl font-bold ml-2">₹<%= session.cart.totalPrice %></span>
-                </div>
-            </div>
-    
-            <div>
-                <form action="" class="mt-12">
-                    <input class="border border-grey-400 p-2 w-1/2 mb-4" type="text" placeholder="Phone number">
-                    <input class="border border-grey-400 p-2 w-1/2 mb-4" type="text" placeholder="Address">
-                   <!--
-                    <button class="btn-primary p-6 py-2 rounded-full text-white font-bold mt-6" type="submit">Order Now</button>
-                  -->
-                </form>
-            </div>
-        
-            <div>
-                <a href="/login" class="inline-block cursor-pointer btn-primary px-6 py-2 rounded-full text-red font-bold mt-6 ">Login to continue</a>
-            </div>
-         </div>
-    
-         <% } else { %>
-        <div class="empty-cart">
-            <div class="container mx-auto text-center">
-            <h1 class="text-3xl font-bold mb-2">Cart Empty</h1>
-            <p class="text-grey-500 text-lg mb-12">Their's Nothing In Here 😰</p>
-                     <img class="w-2/5 mx-auto" src="img/empty-cart.png" alt="empty-cart">
-            <button > <a href="/" class=" px-6 px-2 rounded-fully text-white font-bold mt-12">Go To Menu</a></button>
-             </div>
-         </div> 
-    
-         <% } %>
-    </section>
+        <% if(session.cart){%>
+              <div class="order container mx-auto xl:w-1/2">
+                  <div class="flex items-center border-b border-gray-300 pb-4">
+                      <img class="full" src="img/cart2.jpg" alt="fully">
+                      <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
+                  </div>
+                  <div class="pizza-list">
+                     <% for(let pizza of Object.values(session.cart.items)) { %>
+                     <div class="flex items-center my-8">
+                         <img class="w-24" src="/img/<%= pizza.item.image %>" alt="">
+                         <div class="flex-1 ml-4">
+                             <h1><%= pizza.item.name %></h1>
+                             <span><%= pizza.item.size %></span>
+                         </div>
+                         <span class="flex-1"><%= pizza.qty %> Pcs</span>
+                         <span class="font-bold text-lg">₹ <%= pizza.item.price * pizza.qty %></span>
+                     </div>
+                     <%  } %>
+                  </div>            
+                  <hr>
+                 
+                 <div class="text-right py-4">
+                     <div>
+                         <span class="text-lg font-bold">Total Amount</span>
+                         <span class="amount text-2xl font-bold ml-2">₹<%= session.cart.totalPrice %></span>
+                     </div>
+                 </div>
+                 <% if(user) { %>
+                 <div>
+                     <form action="/orders" method="POST" class="mt-12">
+                         <input name="phone" class="border border-grey-400 p-2 w-1/2 mb-4" type="text" placeholder="Phone number">
+                         <input name="Address" class="border border-grey-400 p-2 w-1/2 " type="text" placeholder="Address">
+                         <button class="btn-primary p-6 py-2 rounded-full text-white font-bold mt-6" type="submit">Order Now</button>
+                       
+                     </form>
+                 </div>
+             
+                 <% } else { %>
+                     <a href="/login" class="inline-block cursor-pointer btn-primary px-6 py-2 rounded-full text-red font-bold mt-6 ">Login to continue</a>
+                 <% } %>
+              </div>
+         
+              <% } else { %>
+             <div class="empty-cart">
+                 <div class="container mx-auto text-center">
+                 <h1 class="text-3xl font-bold mb-2">Cart Empty</h1>
+                 <p class="text-grey-500 text-lg mb-12">Their's Nothing In Here 😰</p>
+                          <img class="w-2/5 mx-auto" src="img/empty-cart.png" alt="empty-cart">
+                 <button > <a href="/" class=" px-6 px-2 rounded-fully text-white font-bold mt-12">Go To Menu</a></button>
+                  </div>
+              </div> 
+         
+              <% } %>
+         </section>
     
 </body>
 </html>

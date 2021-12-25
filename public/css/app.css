@@ -392,3 +392,7 @@ section.login {
   font-weight: bolder;
   flex: 1;
 }
+
+.link {
+  color: orangered;
+}

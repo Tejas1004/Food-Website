@@ -1,7 +1,12 @@
-const User = require('../../models/user')
+const User = require('../../models/user.js')
 const bcrypt = require("bcrypt")
 const passport = require("passport")
 function authcontrol() {
+
+    const _getRedirectUrl = (req) => {
+        return req.user.role === 'admin' ? '/admin/orders' : '/customer/orders'
+    }
+    
   return {
     login(req, res) {
         res.render('auth/login.ejs')
@@ -28,7 +33,7 @@ function authcontrol() {
                     return next(err)
                 }
 
-                return res.redirect("/")
+                return res.redirect(_getRedirectUrl(req))
             })
         })(req, res, next)
     },
@@ -69,7 +74,7 @@ function authcontrol() {
         return res.redirect('/')
      }).catch(err => {
         req.flash('error', 'Something went wrong')
-            return res.redirect('/register')
+            return res.redirect('/register.ejs')
      })
     },
     logout(req, res) {

@@ -15,14 +15,14 @@
     <div>
     <i1mg class="container mx-auto flex items-center justify-between py-4">
         <div>
-            <img class="photo" src="/img/Logo.png" alt="LOGO" > 
+          <a href="/"> <img class="photo" src="/img/Logo.png" alt="LOGO" > </a> 
         </div>
         <div>
             <ul class="flex items-center">
-                <li class="ml-6"> <a href="/">Home</a> </li>
+                <li class="ml-6"> <a href="/">Menu</a> </li>
                 <li class="ml-6"><a href="#">Offers</a></li>
+                <% if(user) { %>    
                 <li>
-                  <% if(user) { %>
                   <form id="logout" action="/logout" method="POST">
                       <a onclick="document.getElementById('logout') .submit()" href="#">Logout</a>
                   </form>
