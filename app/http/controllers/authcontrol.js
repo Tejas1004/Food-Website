@@ -4,7 +4,7 @@ const passport = require("passport")
 function authcontrol() {
 
     const _getRedirectUrl = (req) => {
-        return req.user.role === 'admin' ? '/admin/orders' : '/customer/orders'
+        return req.user.role === 'admin' ? '/admin/orders' : '/customers/orders'
     }
     
   return {
@@ -25,7 +25,7 @@ function authcontrol() {
             }
             if(!user) {
                 req.flash('error', info.message )
-                return res.redirect('/login.ejs')
+                return res.redirect('/login')
             }
             req.login(user, (err) => {
                 if(err) {
