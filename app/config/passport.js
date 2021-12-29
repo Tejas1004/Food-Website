@@ -1,5 +1,5 @@
 const LocalStrategy = require('passport-local').Strategy
-const User=require('../models/user')
+const User = require('../models/user')
 const bcrypt = require('bcrypt')
 
 function init(passport) {
@@ -20,6 +20,7 @@ function init(passport) {
             return done(null, false, { message: 'Something went wrong' })
         })
     }))
+
     passport.serializeUser((user, done) => {
         done(null, user._id)
     })
@@ -29,7 +30,6 @@ function init(passport) {
             done(err, user)
         })
     })
-  
 
 }
 
