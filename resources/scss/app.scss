@@ -24,7 +24,22 @@ section.hero {
   background: $secondary;
 }
 .size {
-  background: $secondary;
+  background: orangered;
+  font-weight: bolder;
+}
+.flo {
+  font-family: cursive;
+  font-weight: bold;
+}
+.menu-det {
+  background: #f8f8f8;
+  border: rgb(202, 105, 70);
+}
+.nam {
+  color: orangered;
+}
+.list {
+  font-weight: bolder;
 }
 .add-to-cart {
   border: 2px solid $primary;

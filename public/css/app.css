@@ -300,7 +300,26 @@ section.hero {
 }
 
 .size {
-  background: #F8F8F8;
+  background: orangered;
+  font-weight: bolder;
+}
+
+.flo {
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.menu-det {
+  background: #f8f8f8;
+  border: #ca6946;
+}
+
+.nam {
+  color: orangered;
+}
+
+.list {
+  font-weight: bolder;
 }
 
 .add-to-cart {
