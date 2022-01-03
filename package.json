@@ -1,14 +1,17 @@
 {
   "name": "realtime-pizza",
+  "homepage": "http://Tejas1004.github.io/Food-Website",
   "version": "1.0.0",
   "description": "This is My First Capstone Project",
   "main": "index.js",
   "scripts": {
     "serve": "node server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "nodemon server.js",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "npx mix watch",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "mix --production"
   },
   "author": "Legit web developer",
   "license": "ISC",
@@ -31,6 +34,7 @@
     "noty": "^3.2.0-beta-deprecated",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "pm2": "^5.1.2",
     "socket.io": "^2.3.0",
     "stripe": "^8.118.0"
   },
