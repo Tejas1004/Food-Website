@@ -5,7 +5,7 @@
   "description": "This is My First Capstone Project",
   "main": "index.js",
   "scripts": {
-    "serve": "node server.js",
+    "start": "node server.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "nodemon server.js",
